@@ -1973,3 +1973,19 @@ h3.heading, h2.heading {
 }
 
 /*-- //Responsive design --*/
+
+.service-grid {
+    text-align: center;
+    margin-bottom: 30px; /* Adjust as needed */
+}
+
+.service-icon {
+    margin-bottom: 15px; /* Adjust as needed */
+}
+
+.service-img {
+    width: 150px; /* Fixed width for all images */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Optional: Limit the height to ensure uniformity */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+}
