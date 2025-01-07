@@ -18,6 +18,76 @@
             window.scrollTo(0, 1);
         }
     </script>
+    <script>
+
+        // Function to get query parameters from the URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);  // Get URL parameters
+            return urlParams.get(param);  // Return the value of the parameter
+        }
+
+        // Example usage: getting values from the query string
+        const service = getQueryParam('service');
+        console.log("service=" + service)
+        // Function to fetch data from JSON file and populate table
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('serviceTable').getElementsByTagName('tbody')[0];
+
+                // Loop through the data and insert rows
+                let no = 0;
+                for (let i = 0; i < data.length; i++) {
+                    let item = data[i];
+                    let type = item.type;
+                    if (type !== (service)) {
+                        continue;
+                    }
+
+                    const row = tableBody.insertRow(); // Create a new row
+
+                    // Insert cells for each data item
+                    const cell1 = row.insertCell(0);
+                    const cell2 = row.insertCell(1);
+                    const cell3 = row.insertCell(2);
+                    const cell4 = row.insertCell(3);
+
+                    // Set the cell content
+                    cell1.innerHTML = no + 1;
+                    cell2.innerHTML = item.name;
+                    cell3.innerHTML = item.location;
+                    cell4.innerHTML = item.contact;
+                    no++;
+                }
+            })
+            .catch(error => console.error('Error loading JSON data:', error));
+    </script>
+    <style>
+        /* Make the table scrollable on smaller screens */
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Optionally, add some padding to improve the visual appearance */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Ensure images are responsive */
+        .service-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+    </style>
+
 
     <!-- css files -->
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/><!-- bootstrap css -->
@@ -76,101 +146,52 @@
             <li class="breadcrumb-item">
                 <a href="index.html">Home</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Our Services</li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <a href="services.html">Our Services</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Auto Contact</li>
+
         </ol>
     </div>
 </div>
 <!-- //page details -->
 
+
 <!-- services -->
-<section class="services py-5" id="services">
-    <div class="container py-lg-5 py-3">
-        <div class="row service-grid-grids text-center">
-            <!-- Auto Card -->
-            <div class="col-lg-3 col-md-6 service-grid">
-                <a href="service_auto.html?service=auto" class="service-link">
-                    <div class="service-icon">
-                        <img src="images/auto.jpeg" alt="Auto Image" class="service-img">
-                    </div>
-                    <h4 class="mt-3">Auto</h4>
-                </a>
-            </div>
-
-
-            <!-- Car Card -->
-            <div class="col-lg-3 col-md-6 service-grid mt-md-0 mt-5">
-                <a href="service_auto.html?service=car" class="service-link">
-
-                    <div class="service-icon">
-                        <img src="images/car.png" alt="Car Image" class="service-img">
-                    </div>
-                    <h4 class="mt-3">Car</h4>
-                </a>
-            </div>
-
-            <!-- Van Card -->
-            <div class="col-lg-3 col-md-6 service-grid mt-lg-0 mt-5">
-                <a href="service_auto.html?service=van" class="service-link">
-
-                    <div class="service-icon">
-                        <img src="images/van.png" alt="Van Image" class="service-img">
-                    </div>
-                    <h4 class="mt-3">Van</h4>
-                </a>
-            </div>
-
-            <!-- Tractor Card -->
-            <div class="col-lg-3 col-md-6 service-grid mt-lg-0 mt-5">
-                <a href="service_auto.html?service=tractor" class="service-link">
-
-                    <div class="service-icon">
-                        <img src="images/tractor.jpeg" alt="Tractor Image" class="service-img">
-                    </div>
-                    <h4 class="mt-3">Tractor</h4>
-                </a>
-            </div>
-
-            <!-- Watertank Card -->
-            <div class="col-lg-3 col-md-6 service-grid mt-lg-0 mt-5">
-                <a href="service_auto.html?service=water_tank" class="service-link">
-
-                    <div class="service-icon">
-                        <img src="images/water_tank.jpeg" alt="Watertank Image" class="service-img">
-                    </div>
-                    <h4 class="mt-3">Watertank</h4>
-                </a>
-            </div>
+<div class="services" id="search">
+    <div class="container pt-lg-5 pt-3">
+        <div class="input-group rounded">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+                <i class="fas fa-search"></i></span>
         </div>
 
+    </div>
+</div>
 
-        <div class="row mt-5">
-            <div class="col-md-6 p-md-0">
-                <div class="bg-image-left">
-                    <h4>Tours & Travels</h4>
-                </div>
-            </div>
-            <div class="col-md-6 p-md-0">
-                <div class="bg-image-right">
-                    <h4>Tours & Travels</h4>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 pr-md-0">
-                        <div class="bg-image-bottom1">
-                            <h4>Tours</h4>
-                        </div>
-                    </div>
-                    <div class="col-md-6 pl-md-0">
-                        <div class="bg-image-bottom2">
-                            <h4>Travels</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- services -->
+<section class="services py-5" id="services">
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-bordered text-left" id="serviceTable">
+                <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Contact</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Dynamic rows will be inserted here -->
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
 
 <!-- //services -->
+
 
 <!-- stats -->
 <section class="stats py-5" id="stats">
