@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://creativecoder567.github.io/GudiyathamGuide/sitemap.xml
