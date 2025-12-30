@@ -1,0 +1,198 @@
+BUS Name,Entering Time,Leaving Time,Starting Place,Destination Place 
+,,,,
+87C,12.20,12.25,K.G.F,Vellore 
+666A,3.05,3.10,Bangalore ,Kanchipuram 
+kalaimagal,---,3.45,Gudiyatham ,Vellore
+89A,---,4.10,Gudiyatham,Chennai 
+VRM,---,4.15,Gudiyatham ,Vellore
+VDM,---,4.15,Gudiyatham ,Vellore
+84R,4.15,4.20,Pernambet,Chennai 
+145D,---,4.30,Gudiyatham ,Chennai 
+84A,4.30,4.35,Pernambet ,Chennai 
+GVD,---,4.40,Gudiyatham ,Vellore 
+214A,---,4.50,Gudiyatham ,Vellore 
+84B,5.00,5.05,Pernambet,Chennai 
+89K,---,5.10,Gudiyatham ,Chennai 
+82A,---,5.15,Gudiyatham ,Vellore 
+89B,---,5.20,Gudiyatham ,Chennai 
+155A,5.20,5.25,Pernambet ,Vellore 
+215A,---,5.30,Gudiyatham ,marakaanam
+VSM,---,5.35,Gudiyatham,Vellore 
+227A,---,5.40,Gudiyatham ,Chidambaram 
+84D,5.35,5.45,Pernambet ,Chennai 
+159A,5.45,5.50,Pernambet,Kanchipuram 
+Santhira,5.47,5.52,Gudiyatham ,Vellore (Ponnai)
+75B,---,5.55,Gudiyatham ,Vellore 
+ Kalaimaghal,5.55,6.00,Gudiyatham ,Vellore 
+VDM,5.40,6.03,Gudiyatham ,Vellore 
+328B,6.00,6.05,Pernambet,Vellore 
+89R,--,6.10,Gudiyatham ,Vellore 
+VSM,6.10,6.15,Ambur,Vellore 
+VSM,6.15,6.20,Gudiyatham ,Vellore 
+408A,--,6.25,Gudiyatham , Thiruthani
+84E,6.20,6.30,Pernambet,Chennai 
+GVD,6.25,6.35,Pernambet,Vellore
+84C,6.35,6.40,Pernambet,Vellore
+221A,--,6.45,Gudiyatham ,Athur
+81A,6.30,6.50,Gudiyatham ,Chennai 
+VDM,6.35,6.55,valathur,Vellore
+VRM,6.35,7.00,Gudiyatham ,Arkad
+145E,--,7.10,Gudiyatham ,Chennai 
+VRM,7.10,7.15,Pernambet,Vellore
+84F,7.15,7.25,Ambur,Vellore
+VRM,7.20,7.30,Palamaner,Vellore
+VDM,--,7.32,Gudiyatham ,Vellore
+214A,6.50,7.35,Gudiyatham ,Arani
+87B,7.35,7.40,K.G.F,Vellore
+89K,7.25,7.45,Gudiyatham ,Arani
+GVD,7.40,7.50,Sempali,Vellore
+85A,7.50,7.55,V. Kota,Chennai 
+84S3,7.55,8.00,Bharatarama,Chennai 
+82A,7.40,8.05,Gudiyatham ,Vellore
+VSM,7.57,8.10,Gudiyatham ,Vellore
+145B,---,8.15,Gudiyatham ,Chennai 
+75B,8.10,8.20,Gudiyatham ,Vellore
+VDM,8.10,8.22,Gudiyatham ,vellore
+84G,8.20,8.25,Pernambet,Chennai 
+GVD,8.25,8.30,Chinakunda,Vellore
+84 O,8.30,8.35,Pernambet,Vellore
+84 H,8.30,8.40,Pernambet,Vellore
+84H,8.35,8.45,Pernambet,Vellore
+80A,8.50,8.55,Ambur,Chennai 
+87D,8.50,8.57,K.G.F,Vellore
+ Kalaimaghal,8.25,8.59,Gudiyatham ,Vellore
+159B,8.40,9.05,Gudiyatham ,Kanchipuram
+VRM,9.00,9.06,Gudiyatham ,Vellore
+89C,9.05,9.10,Ambur,Chennai 
+84S1,9.25,9.35,Pernambet,Vellore
+89D,9.35,9.40,Ambur,Chennai 
+VDM,9.25,9.45,Gudiyatham ,Vellore
+22BA,9.30,9.50,Gudiyatham ,Thiruvannamalai
+89R,9.20,9.55,Gudiyatham ,Vellore
+VDM,---,9.57,Gudiyatham ,Vellore
+VSM,9.50,10.02,paravakkal,Vellore
+54C,10.05,10.10,Pernambet,Chennai 
+DVD,10.00,10.15,Sempali,Vellore
+75A,---,10.20,Gudiyatham ,Vellore
+82A,10.15,10.30,Gudiyatham ,Chennai 
+VDM,10.32,10.35,Gudiyatham ,Vellore
+84O,10.30,10.40,Pernambet,Vellore
+89H,---,10.45,Gudiyatham ,Vellore
+84J,10.45,10.50,Pernambet,Vellore
+GVD,10.50,10.55,Pernambet,Vellore
+84M,10.50,11.00,Pernambet,Vellore
+GVD,10.55,11.05,Gudiyatham ,Vellore
+89F,11.05,11.10,Ambur,Chennai 
+GVD,11.10,11.15,Sempali,Vellore
+89J,---,11.25,Gudiyatham ,Vellore
+VSM,11.25,11.30,Palamaner,Vellore
+Chandra,10.52,11.34,Gudiyatham ,Vellore
+84F,11.30,11.40,Pernambet,Chennai 
+VSM,11.30,11.45,paravakkal,Vellore
+G15B,11.40,11.50,Gudiyatham ,Vellore
+75B,11.50,11.55,Pernambet,Chennai 
+VDM,11.50,12.00,Gudiyatham ,Vellore
+81 I,---,12.10,Gudiyatham ,Vellore
+VRM,11.45,12.15,Gudiyatham ,Vellore
+84 L,12.10,12.20,Pernambet,Vellore
+VRM,12.05,12.25,Gudiyatham ,Arcot
+214A,12.20,12.30,Gudiyatham ,Melmaruvathur
+89K,12.25,12.40,Gudiyatham ,Chennai 
+227C,---,12.45,Gudiyatham ,Chidambaram
+88A,12.45,12.50,Kuppama,Chennai 
+75A,12.45,12.55,Gudiyatham ,Vellore
+ Kalaimaghal,12.55,12.59,Bharatarama,Vellore
+VRM,12.50,13.05,Pernambet,Vellore
+84H,13.00,13.10,Pernambet,Chennai 
+VDM,---,13.15,Gudiyatham ,Vellore
+89R,12.10,13.20,Gudiyatham ,Chennai 
+84S1,13.20,13.25,Pernambet,Vellore
+666B,13.20,13.28,Bangalore,Vellore
+145C,---,13.30,Gudiyatham ,Chennai 
+VRM,13.20,13.35,Palamaner,Vellore
+87A,13.35,13.40,K.G.F,Vellore
+VDM,13.35,13.45,valathur,Vellore
+89E,13.45,13.50,Ambur,Chennai 
+84S2,13.50,13.55,Pernambet,Vellore
+VDM,13.55,14.00,Kundalapally,Vellore
+76A,13.50,14.05,Gudiyatham ,Vellore
+89J,13.50,14.10,Gudiyatham ,Vellore
+GVD,13.40,14.15,Sempali,Vellore
+408A,14.00,14.20,Gudiyatham ,Tiruttani
+84 I,14.15,14.25,Ambur,Chennai 
+GVD,13.55,14.30,Gudiyatham ,Vellore
+84P,14.35,14.40,Pernambet,Vellore
+GVD,14.40,14.45,Sempali,Vellore
+84 O,14.25,14.50,Bharatarama,Chennai 
+227D,---,14.55,Gudiyatham ,Chidambaram
+84J,14.45,15.00,Pernambet,Chennai 
+GVD,15.00,15.05,Pernambet,Vellore
+83A,15.00,15.10,Gudiyatham ,Vellore
+VSM,15.10,15.15,Pernambet,Vellore
+54K,15.35,15.40,Pernambet,Vellore
+VRM,14.22,15.42,Gudiyatham ,Vellore
+G15B,15.40,15.45,valathur,Vellore
+75A,15.20,15.50,Gudiyatham ,Vellore
+VDM,15.40,15.51,Gudiyatham ,Vellore
+VDM,---,15.55,Gudiyatham ,Vellore
+84R,15.55,16.05,Pernambet,
+VRM,10.00,16.07,Gudiyatham ,
+4440D,---,16.15,Gudiyatham ,Vellore
+VDM,15.00,16.20,valathur,Chennai 
+87B,16.20,16.25,K.G.F,Vellore
+89J,16.15,16.30,Gudiyatham ,Vellore
+59G,16.25,16.35,Ambur,Chennai 
+77B,16.00,16.40,Gudiyatham ,Chennai 
+VSM,16.00,16.45,paravakkal,Vellore
+84A,16.40,16.50,Pernambet,Vellore
+GVD,16.50,16.55,Gudiyatham ,Vellore
+84B,16.55,17.00,Pernambet,Vellore
+214A,17.00,17.05,Gudiyatham ,Vandanasi
+89H,17.00,17.15,Ambur,Chennai 
+228A,17.00,17.20,Gudiyatham ,Thiruvannamalai
+VSM,17.20,17.25,Gudiyatham ,Vellore
+89A,17.20,17.35,Ambur,Vellore
+GVD,17.20,17.40,Gudiyatham ,Vellore
+VRM,17.35,17.45,Pernambet,Vellore
+84S1,17.35,17.50,Pernambet,Vellore
+4440A,17.40,17.55,Gudiyatham ,Vellore
+VDM,17.58,18.00,Gudiyatham ,Vellore
+88B,17.50,18.05,Kuppama,Chennai 
+189A,18.00,18.10,Gudiyatham ,Chennai 
+GVD,18.05,18.15,Sempali,Vellore
+89 I,18.10,18.20,Ambur,Chennai 
+VRM,18.10,18.25,Gudiyatham ,Vellore
+84E,18.30,18.35,Sarangal,Vellore
+75A,18.15,18.40,Gudiyatham ,Chennai 
+VSM,18.30,18.45,Palamaner,Vellore
+89B,18.45,18.55,Ambur,Vellore
+VSM,18.50,19.00,Ambur,Vellore
+ Kalaimaghal,19.00,19.05,Bharatarama,Vellore
+84M,19.00,19.10,Pernambet,Chennai 
+GVD,19.05,19.15,Pernambet,Vellore
+89J,18.45,19.25,Gudiyatham ,Chennai 
+VDM,19.25,19.30,Kundalapally,Vellore
+G15B,19.30,19.35,valathur,Vellore
+87D,19.35,19.40,K.G.F,Vellore
+GVD,19.30,19.45,Gudiyatham ,Vellore
+VDM,19.00,19.47,valathur,Vellore
+84D,19.50,19.55,Ambur,Vellore
+VRM,19.35,20.00,Gudiyatham ,Vellore
+227E,---,20.10,Gudiyatham ,Chidambaram
+VSM,19.25,20.15,Gudiyatham ,Vellore
+VDM,---,20.17,Gudiyatham ,Vellore
+Chandra,20.17,20.20,Gudiyatham ,Vellore
+84G,20.05,20.25,Pernambet,Vellore
+VDM,20.25,20.30,Gudiyatham ,Vellore
+84K,20.20,20.35,Pernambet,Chennai 
+84L,20.30,20.45,Pernambet,Chennai 
+84P,20.40,20.55,Ambur,Vellore
+VRM,20.50,20.56,Gudiyatham ,Vellore
+81A,20.55,21.10,Ambur,Vellore
+83A,20.40,21.25,Gudiyatham ,Vellore
+ Kalaimaghal,21.00,21.30,Gudiyatham ,Vellore
+VSM,21.25,21.40,Gudiyatham ,Vellore
+89SP,21.30,21.55,Gudiyatham ,Vellore
+VSM,21.40,22.02,Chinakunda,Vellore
+87A,22.00,22.05,K.G.F,Vellore
+444CE,,22.30,Gudiyatham ,Vellore

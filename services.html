@@ -73,6 +73,7 @@
                 <li class="active"><a href="services.html">Services</a></li>
                 <li class="services_dropdown"><a href="sales.html">Sales</a></li>
                 <li class=""><a href="bustimings.html">Bus Timings</a></li>
+                <li class=""><a href="bus_individual_time.html">Individual Bus Timings</a></li>
                 <li class=""><a href="gallery.html">Gallery</a></li>
                 <li class="mr-2"><a href="contact.html">Contact</a></li>
                 <li class=""><span><span class="fa fa-phone"></span> +12 34 3456 7890</span></li>
@@ -236,6 +237,16 @@
     .provider-card h5 { margin:0 0 6px 0; font-size:1.05rem; }
     .provider-card p { margin:0; color:#666; font-size:0.95rem; }
     @media (max-width:480px){ .provider-card { width:100%; max-width:none; } }
+    .coming-soon-label {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
 </style>
 
 <script>
@@ -249,19 +260,34 @@
                 grid.innerHTML = '';
                 // Render cards
                 categories.forEach(entry => {
-                    const a = document.createElement('a');
-                    a.href = `service_detail?service_id=${entry.id}`;
-                    a.className = 'provider-card';
-                    a.setAttribute('aria-label', entry.name + ' services');
-                    a.style.cssText = 'display: inline-block; max-width: 260px; margin: 10px; cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); background: #fff; text-decoration: none; color: inherit;';
+                    const card = document.createElement('div');
+                    card.className = 'provider-card';
+                    card.style.cssText = 'display: inline-block; max-width: 260px; margin: 10px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); background: #fff; text-decoration: none; color: inherit; position: relative;';
 
-                    a.innerHTML = `
-                        <img src="${entry.image}" alt="${entry.name}" onerror="console.error('Image failed to load:', '${entry.image}')" style="width: 100%; height: 160px; object-fit: cover; border: 1px solid #ddd;">
-                        <div class="card-body text-center" style="padding: 12px; background: white;">
-                            <h5 style="margin: 0 0 6px 0; font-size: 1.05rem; color: #333;">${entry.name}</h5>
-                            <p style="margin: 0; color: #666; font-size: 0.95rem;">${entry.description}</p>
-                        </div>`;
-                    grid.appendChild(a);
+                    if (entry.isActive && entry.isAvailable) {
+                        const a = document.createElement('a');
+                        a.href = `service_detail.html?service_id=${entry.id}`;
+                        a.setAttribute('aria-label', entry.name + ' services');
+                        a.style.textDecoration = 'none';
+                        a.style.color = 'inherit';
+                        a.innerHTML = `
+                            <img src="${entry.image}" alt="${entry.name}" onerror="console.error('Image failed to load:', '${entry.image}')" style="width: 100%; height: 160px; object-fit: contain; border: 1px solid #ddd; padding: 10px 0;">
+                            <div class="card-body text-center" style="padding: 12px; background: white;">
+                                <h5 style="margin: 0 0 6px 0; font-size: 1.05rem; color: #333;">${entry.name}</h5>
+                                <p style="margin: 0; color: #666; font-size: 0.95rem;">${entry.description}</p>
+                            </div>`;
+                        card.appendChild(a);
+                    } else {
+                        card.style.cursor = 'not-allowed';
+                        card.innerHTML = `
+                            <img src="${entry.image}" alt="${entry.name}" onerror="console.error('Image failed to load:', '${entry.image}')" style="width: 100%; height: 160px; object-fit: contain; border: 1px solid #ddd; padding: 10px 0; filter: grayscale(100%);">
+                            <div class="card-body text-center" style="padding: 12px; background: white;">
+                                <h5 style="margin: 0 0 6px 0; font-size: 1.05rem; color: #333;">${entry.name}</h5>
+                                <p style="margin: 0; color: #666; font-size: 0.95rem;">${entry.description}</p>
+                            </div>
+                            <div class="coming-soon-label">Coming Soon</div>`;
+                    }
+                    grid.appendChild(card);
                 });
             })
             .catch(err => {
@@ -383,7 +409,7 @@
         {"@type":"Question","name":"Is water tanker delivery tested for quality?","acceptedAnswer":{"@type":"Answer","text":"Confirm potable water certification with the supplier for drinking water deliveries."}},
         {"@type":"Question","name":"Can I rent a tempo for goods transport?","acceptedAnswer":{"@type":"Answer","text":"Yes — tempo/van services are commonly used for goods; agree on loading charges beforehand."}},
         {"@type":"Question","name":"Do carpenters provide custom furniture?","acceptedAnswer":{"@type":"Answer","text":"Local carpenters can craft custom pieces; discuss material and finish options before starting."}},
-        {"@type":"Question","name":"Are online ticket bookings available for Gudiyatham bus services?","acceptedAnswer":{"@type":"Answer","text":"Many private operators and agents offer online or phone booking support."}},
+        {"@type":"Question","name": "Are online ticket bookings available for Gudiyatham bus services?","acceptedAnswer":{"@type":"Answer","text":"Many private operators and agents offer online or phone booking support."}},
         {"@type":"Question","name":"How to report incorrect listings?","acceptedAnswer":{"@type":"Answer","text":"Use the Contact page to report updates or request corrections."}}
     ]
 }

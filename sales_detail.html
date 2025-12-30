@@ -25,10 +25,10 @@
             return urlParams.get(param);
         }
 
-        const serviceId = parseInt(getQueryParam('service_id')) || 0;
+        const salesId = parseInt(getQueryParam('sales_id')) || 0;
         // Update display
-        const display = document.getElementById('serviceIdDisplay');
-        if (display) display.textContent = serviceId;
+        const display = document.getElementById('salesIdDisplay');
+        if (display) display.textContent = salesId;
         // Render providers as responsive cards
         function renderProviders(providers) {
             const grid = document.getElementById('providersGrid');
@@ -41,13 +41,13 @@
             providers.forEach((p, idx) => {
                 const card = document.createElement('div');
                 card.className = 'provider-card col-lg-4 col-md-6 col-sm-12 mb-4';
-                card.style.position = 'relative';
+                 card.style.position = 'relative';
 
                 if (p.isActive && p.isAvailable) {
                     const ratingStars = p.rating ? '★'.repeat(Math.floor(p.rating)) + '☆'.repeat(5 - Math.floor(p.rating)) : '';
                     const emailLink = p.email ? `<a href="mailto:${p.email}" class="text-primary"><i class="fa fa-envelope"></i> ${p.email}</a>` : '';
                     const websiteLink = p.website ? `<a href="${p.website}" target="_blank" class="text-primary"><i class="fa fa-globe"></i> ${p.website}</a>` : '';
-                    const servicesList = p.services_offered ? p.services_offered.split(', ').map(s => `<span class="badge badge-secondary mr-1">${s.trim()}</span>`).join('') : '';
+                    const productsList = p.products ? p.products.split(', ').map(s => `<span class="badge badge-secondary mr-1">${s.trim()}</span>`).join('') : '';
                     card.innerHTML = `
                         <div class="card h-100 shadow-sm" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
                             <img src="${p.image || 'images/auto.svg'}" class="card-img-top" alt="${p.name}" style="height: 200px; object-fit: contain; width: 100%; padding: 10px 0;" onerror="console.error('Image failed:', '${p.image || 'images/auto.svg'}')">
@@ -60,7 +60,7 @@
                                 ${p.rating ? `<p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-star text-warning"></i> ${ratingStars} (${p.rating})</p>` : ''}
                                 ${p.opening_hours ? `<p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-clock-o"></i> ${p.opening_hours}</p>` : ''}
                                 ${p.description ? `<p class="card-text" style="margin-bottom: 5px;">${p.description}</p>` : ''}
-                                ${servicesList ? `<div class="mt-2" style="margin-top: 10px;">${servicesList}</div>` : ''}
+                                ${productsList ? `<div class="mt-2" style="margin-top: 10px;">${productsList}</div>` : ''}
                             </div>
                         </div>`;
                 } else {
@@ -84,18 +84,18 @@
         (function(){
             const searchInput = document.querySelector('#search input[type="search"]');
             Promise.all([
-                fetch('data/categories-data.json').then(r => r.json()),
-                fetch('data/services-data.json').then(r => r.json())
+                fetch('data/sales-categories-data.json').then(r => r.json()),
+                fetch('data/sales-data.json').then(r => r.json())
             ])
                 .then(([categories, data]) => {
                     // find category
-                    const category = categories.find(c => c.id === serviceId);
-                    const categoryName = category ? category.name : 'Services';
-                    // filter by service_id
-                    const filtered = data.filter(d => d.service_id === serviceId);
+                    const category = categories.find(c => c.id === salesId);
+                    const categoryName = category ? category.name : 'Sales';
+                    // filter by sales_id
+                    const filtered = data.filter(d => d.service_id === salesId);
                     // update heading/title
                     try {
-                        const pretty = categoryName + ' Services';
+                        const pretty = categoryName + ' Sales';
                         const h = document.querySelector('.page-title');
                         if (h) h.textContent = pretty + ' — Gudiyatham Guide';
                         document.title = pretty + ' — Gudiyatham Guide';
@@ -110,7 +110,7 @@
                         searchInput.addEventListener('input', function(e){
                             const q = e.target.value.trim().toLowerCase();
                             const shown = filtered.filter(p => {
-                                return p.name.toLowerCase().includes(q) || (p.location||'').toLowerCase().includes(q) || (p.contact||'').toLowerCase().includes(q) || (p.email||'').toLowerCase().includes(q) || (p.description||'').toLowerCase().includes(q) || (p.opening_hours||'').toLowerCase().includes(q) || (p.services_offered||'').toLowerCase().includes(q);
+                                return p.name.toLowerCase().includes(q) || (p.location||'').toLowerCase().includes(q) || (p.contact||'').toLowerCase().includes(q) || (p.email||'').toLowerCase().includes(q) || (p.description||'').toLowerCase().includes(q) || (p.opening_hours||'').toLowerCase().includes(q) || (p.products||'').toLowerCase().includes(q);
                             });
                             renderProviders(shown);
                         });
@@ -119,7 +119,7 @@
                 .catch(err => {
                     console.error('Error loading data', err);
                     const grid = document.querySelector('.provider-grid');
-                    if (grid) grid.innerHTML = '<p>Unable to load service data.</p>';
+                    if (grid) grid.innerHTML = '<p>Unable to load sales data.</p>';
                 });
         })();
     </script>
@@ -166,8 +166,8 @@
             <ul class="menu mt-lg-3 ml-auto">
                 <li class=""><a href="index.html">Home</a></li>
                 <li class=""><a href="about.html">About Us</a></li>
-                <li class="active"><a href="services.html">Services</a></li>
-                <li class="services_dropdown"><a href="sales.html">Sales</a></li>
+                <li class=""><a href="services.html">Services</a></li>
+                <li class="active services_dropdown"><a href="sales.html">Sales</a></li>
                 <li class=""><a href="bustimings.html">Bus Timings</a></li>
                 <li class=""><a href="bus_individual_time.html">Individual Bus Timings</a></li>
                 <li class=""><a href="gallery.html">Gallery</a></li>
@@ -196,10 +196,10 @@
             <li class="breadcrumb-item">
                 <a href="index.html">Home</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">
-                <a href="services.html">Our Services</a>
+            <li class="breadcrumb-item" aria-current="page">
+                <a href="sales.html">Sales</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Auto Contact</li>
+            <li class="breadcrumb-item active" aria-current="page">Sales Detail</li>
 
         </ol>
     </div>

@@ -66,9 +66,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<li class=""><a href="about.html">About Us</a></li>
 				<li class=""><a href="services.html">Services</a></li>
 				<li class="services_dropdown"><a href="sales.html">Sales</a></li>
-          <li class=""><a href="bustimings.html">Bus Timings</a></li>
+          <li class="active"><a href="bustimings.html">Bus Timings</a></li>
+				<li class=""><a href="bus_individual_time.html">Individual Bus Timings</a></li>
 				<li class=""><a href="gallery.html">Gallery</a></li>
-				<li class="active mr-2"><a href="contact.html">Contact</a></li>
+				<li class="mr-2"><a href="contact.html">Contact</a></li>
 				<li class=""><span><span class="fa fa-phone"></span> +12 34 3456 7890</span></li>
 			</ul>
 		</nav>
@@ -108,6 +109,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</section>
 
 	<!-- Bus Timings Table -->
+  <div class="container" style="margin-bottom: 20px;">
+      <input type="text" id="searchInput" class="form-control" placeholder="Search by Route...">
+  </div>
   <table class="table table-bordered">
       <thead>
         <tr>
@@ -346,6 +350,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<a href="services.html">Services</a>
 						</li>
 						<li>
+							<a href="sales.html">Sales</a>
+						</li>
+						<li>
 							<a href="gallery.html">Gallery</a>
 						</li>
 						<li>
@@ -439,6 +446,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	"geo": {"@type":"GeoCoordinates","latitude":12.757,"longitude":78.676},
 	"openingHours": "Mo-Su 04:30-23:30"
 }
+</script>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const table = document.querySelector('.table-bordered');
+    const tbody = table.querySelector('tbody');
+    const rows = tbody.querySelectorAll('tr');
+
+    searchInput.addEventListener('keyup', function(event) {
+        const query = event.target.value.toLowerCase();
+
+        rows.forEach(row => {
+            const route = row.cells[0].textContent.toLowerCase();
+
+            if (route.includes(query)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
 </script>
 
 </body>
