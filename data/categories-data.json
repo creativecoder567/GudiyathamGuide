@@ -3,70 +3,100 @@
     "id": 1,
     "name": "Auto Services",
     "type": "auto",
-    "description": "Repairs and maintenance for vehicles",
-    "image": "images/auto.svg"
+    "description": "Auto Cab Service",
+    "isavailable": "true",
+    "image": "images/auto.svg",
+    "isActive": true,
+    "isAvailable": true
   },
   {
     "id": 2,
     "name": "Plumber Services",
     "type": "plumber",
     "description": "Plumbing repairs and installations",
-    "image": "images/plumber.svg"
+    "isavailable": "false",
+    "image": "images/plumber.svg",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "id": 3,
     "name": "Electrician Services",
     "type": "electrician",
     "description": "Electrical repairs and installations",
-    "image": "images/electrician.svg"
+    "isavailable": "false",
+    "image": "images/electrician.svg",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "id": 4,
     "name": "Carpenter Services",
     "type": "carpenter",
     "description": "Woodworking and carpentry",
-    "image": "images/carpenter.svg"
+    "isavailable": "false",
+    "image": "images/carpenter.svg",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "id": 5,
     "name": "AC/Appliance Repair",
     "type": "ac_repair",
     "description": "Repair of air conditioners and appliances",
-    "image": "images/ac_repair.svg"
+    "isavailable": "false",
+    "image": "images/ac_repair.svg",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "id": 6,
     "name": "Car Rental",
     "type": "car_rental",
     "description": "Vehicle rental services",
-    "image": "images/car_rental.svg"
+    "isavailable": "false",
+    "image": "images/car_rental.svg",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "id": 7,
     "name": "Tractor Rentals",
     "type": "tractor_rentals",
     "description": "Tractor and equipment rental",
-    "image": "images/tractor_rentals.svg"
+    "isavailable": "false",
+    "image": "images/tractor_rentals.svg",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "id": 8,
     "name": "Water Tank Supply",
     "type": "water_tank",
     "description": "Water supply and tank services",
-    "image": "images/water_tank.svg"
+    "isavailable": "false",
+    "image": "images/water_tank.svg",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "id": 9,
     "name": "Home Interior Design",
     "type": "home_interior",
     "description": "Interior design services",
-    "image": "images/home_interior.svg"
+    "isavailable": "false",
+    "image": "images/home_interior.svg",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "id": 10,
     "name": "Online Ticket Booking",
     "type": "ticket_booking",
     "description": "Bus ticket booking services",
-    "image": "images/ticket_booking.svg"
+    "isavailable": "false",
+    "image": "images/ticket_booking.svg",
+    "isActive": false,
+    "isAvailable": false
   }
 ]

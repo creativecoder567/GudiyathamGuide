@@ -1,16 +1,18 @@
 [
   {
     "service_id": 1,
-    "name": "Auto Kumar Workshop",
+    "name": "Muthupandi",
     "location": "Gudiyatham Bus Stand",
-    "contact": "+91 90000 12345",
+    "contact": "+91 8489867648",
     "image": "images/auto.svg",
-    "email": "autokumar@example.com",
+    "email": "",
     "website": "",
     "rating": 4.5,
-    "description": "Expert auto repairs and maintenance",
+    "description": "Auto owner and driver",
     "opening_hours": "9 AM - 6 PM",
-    "services_offered": "Engine repair, Oil change, Brake service"
+    "services_offered": "Auto cab service",
+    "isActive": true,
+    "isAvailable": true
   },
   {
     "service_id": 1,
@@ -23,7 +25,9 @@
     "rating": 4.2,
     "description": "Quick and reliable auto services",
     "opening_hours": "8 AM - 8 PM",
-    "services_offered": "Tire replacement, Battery check, Car wash"
+    "services_offered": "Tire replacement, Battery check, Car wash",
+    "isActive": true,
+    "isAvailable": false
   },
   {
     "service_id": 1,
@@ -36,7 +40,9 @@
     "rating": 4,
     "description": "Comprehensive auto repair services",
     "opening_hours": "10 AM - 7 PM",
-    "services_offered": "Engine tuning, Brake repair, Suspension"
+    "services_offered": "Engine tuning, Brake repair, Suspension",
+    "isActive": true,
+    "isAvailable": false
   },
   {
     "service_id": 1,
@@ -49,7 +55,9 @@
     "rating": 4.3,
     "description": "Fast and affordable auto repairs",
     "opening_hours": "9 AM - 8 PM",
-    "services_offered": "Oil change, Tire service, Diagnostics"
+    "services_offered": "Oil change, Tire service, Diagnostics",
+    "isActive": true,
+    "isAvailable": false
   },
   {
     "service_id": 1,
@@ -62,7 +70,9 @@
     "rating": 4.1,
     "description": "Trusted auto maintenance and repair",
     "opening_hours": "8 AM - 6 PM",
-    "services_offered": "Brake service, Engine repair, AC service"
+    "services_offered": "Brake service, Engine repair, AC service",
+    "isActive": true,
+    "isAvailable": false
   },
   {
     "service_id": 1,
@@ -75,7 +85,9 @@
     "rating": 4.4,
     "description": "Professional auto care services",
     "opening_hours": "9 AM - 7 PM",
-    "services_offered": "Full service, Parts replacement, Detailing"
+    "services_offered": "Full service, Parts replacement, Detailing",
+    "isActive": true,
+    "isAvailable": false
   },
   {
     "service_id": 2,
@@ -88,7 +100,9 @@
     "rating": 4,
     "description": "Professional plumbing services",
     "opening_hours": "7 AM - 9 PM",
-    "services_offered": "Pipe repair, Leak fixing, Installation"
+    "services_offered": "Pipe repair, Leak fixing, Installation",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 2,
@@ -101,7 +115,9 @@
     "rating": 4.2,
     "description": "Fast plumbing repairs",
     "opening_hours": "8 AM - 8 PM",
-    "services_offered": "Leak repair, Pipe installation, Drain cleaning"
+    "services_offered": "Leak repair, Pipe installation, Drain cleaning",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 2,
@@ -114,7 +130,9 @@
     "rating": 4.1,
     "description": "Expert plumbing solutions",
     "opening_hours": "9 AM - 6 PM",
-    "services_offered": "Water heater repair, Faucet fixing, Sewer line"
+    "services_offered": "Water heater repair, Faucet fixing, Sewer line",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 2,
@@ -127,7 +145,9 @@
     "rating": 4.3,
     "description": "Reliable plumbing services",
     "opening_hours": "7 AM - 7 PM",
-    "services_offered": "Emergency repair, Installation, Maintenance"
+    "services_offered": "Emergency repair, Installation, Maintenance",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 2,
@@ -140,7 +160,9 @@
     "rating": 4,
     "description": "Professional plumbing company",
     "opening_hours": "8 AM - 5 PM",
-    "services_offered": "Commercial plumbing, Residential repair"
+    "services_offered": "Commercial plumbing, Residential repair",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 2,
@@ -153,7 +175,9 @@
     "rating": 4.4,
     "description": "Quick plumbing fixes",
     "opening_hours": "6 AM - 10 PM",
-    "services_offered": "Leak detection, Pipe replacement, Fixture repair"
+    "services_offered": "Leak detection, Pipe replacement, Fixture repair",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 3,
@@ -166,7 +190,9 @@
     "rating": 4.3,
     "description": "Certified electrician services",
     "opening_hours": "9 AM - 7 PM",
-    "services_offered": "Wiring, Switch repair, Installation"
+    "services_offered": "Wiring, Switch repair, Installation",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 3,
@@ -179,7 +205,9 @@
     "rating": 4.1,
     "description": "Bright electrical services",
     "opening_hours": "8 AM - 6 PM",
-    "services_offered": "Rewiring, Outlet installation, Lighting"
+    "services_offered": "Rewiring, Outlet installation, Lighting",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 3,
@@ -192,7 +220,9 @@
     "rating": 4.2,
     "description": "Power electrical solutions",
     "opening_hours": "9 AM - 8 PM",
-    "services_offered": "Fault diagnosis, UPS installation, Safety checks"
+    "services_offered": "Fault diagnosis, UPS installation, Safety checks",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 3,
@@ -205,7 +235,9 @@
     "rating": 4,
     "description": "Expert electrical work",
     "opening_hours": "10 AM - 7 PM",
-    "services_offered": "Home wiring, Commercial electrical, Repairs"
+    "services_offered": "Home wiring, Commercial electrical, Repairs",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 3,
@@ -218,7 +250,9 @@
     "rating": 4.4,
     "description": "Reliable electrical services",
     "opening_hours": "7 AM - 9 PM",
-    "services_offered": "Emergency repair, Installation, Maintenance"
+    "services_offered": "Emergency repair, Installation, Maintenance",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 3,
@@ -231,7 +265,9 @@
     "rating": 4.3,
     "description": "Professional electrical company",
     "opening_hours": "8 AM - 5 PM",
-    "services_offered": "Industrial wiring, Residential service"
+    "services_offered": "Industrial wiring, Residential service",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 4,
@@ -244,7 +280,9 @@
     "rating": 4.1,
     "description": "Custom woodworking and repairs",
     "opening_hours": "10 AM - 6 PM",
-    "services_offered": "Furniture making, Door repair, Cabinets"
+    "services_offered": "Furniture making, Door repair, Cabinets",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 4,
@@ -257,7 +295,9 @@
     "rating": 4.2,
     "description": "Wood working specialists",
     "opening_hours": "9 AM - 7 PM",
-    "services_offered": "Custom furniture, Repairs, Installation"
+    "services_offered": "Custom furniture, Repairs, Installation",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 4,
@@ -270,7 +310,9 @@
     "rating": 4,
     "description": "Crafty carpentry services",
     "opening_hours": "8 AM - 6 PM",
-    "services_offered": "Door making, Cabinet repair, Flooring"
+    "services_offered": "Door making, Cabinet repair, Flooring",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 4,
@@ -283,7 +325,9 @@
     "rating": 4.3,
     "description": "Expert woodworking",
     "opening_hours": "10 AM - 5 PM",
-    "services_offered": "Bespoke pieces, Repairs, Restoration"
+    "services_offered": "Bespoke pieces, Repairs, Restoration",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 4,
@@ -296,7 +340,9 @@
     "rating": 4.1,
     "description": "Reliable carpentry services",
     "opening_hours": "9 AM - 7 PM",
-    "services_offered": "Furniture repair, Installation, Custom work"
+    "services_offered": "Furniture repair, Installation, Custom work",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 4,
@@ -309,7 +355,9 @@
     "rating": 4.4,
     "description": "Professional carpentry company",
     "opening_hours": "8 AM - 4 PM",
-    "services_offered": "Commercial carpentry, Residential projects"
+    "services_offered": "Commercial carpentry, Residential projects",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 5,
@@ -322,7 +370,9 @@
     "rating": 4.4,
     "description": "AC and appliance repair specialists",
     "opening_hours": "8 AM - 8 PM",
-    "services_offered": "AC repair, Fridge service, Washing machine"
+    "services_offered": "AC repair, Fridge service, Washing machine",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 5,
@@ -335,7 +385,9 @@
     "rating": 4.2,
     "description": "AC repair experts",
     "opening_hours": "9 AM - 7 PM",
-    "services_offered": "AC installation, Repair, Maintenance"
+    "services_offered": "AC installation, Repair, Maintenance",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 5,
@@ -348,7 +400,9 @@
     "rating": 4,
     "description": "Appliance repair professionals",
     "opening_hours": "10 AM - 6 PM",
-    "services_offered": "Fridge repair, Washing machine service, Microwave"
+    "services_offered": "Fridge repair, Washing machine service, Microwave",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 5,
@@ -361,7 +415,9 @@
     "rating": 4.3,
     "description": "Cooling solutions",
     "opening_hours": "8 AM - 8 PM",
-    "services_offered": "AC servicing, Appliance repair, Installation"
+    "services_offered": "AC servicing, Appliance repair, Installation",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 5,
@@ -374,7 +430,9 @@
     "rating": 4.1,
     "description": "Appliance fixing services",
     "opening_hours": "9 AM - 7 PM",
-    "services_offered": "TV repair, AC gas refill, Fridge defrost"
+    "services_offered": "TV repair, AC gas refill, Fridge defrost",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 5,
@@ -387,7 +445,9 @@
     "rating": 4.5,
     "description": "Professional appliance care",
     "opening_hours": "7 AM - 9 PM",
-    "services_offered": "All appliances, Emergency repair, Warranty service"
+    "services_offered": "All appliances, Emergency repair, Warranty service",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 6,
@@ -400,7 +460,9 @@
     "rating": 4.6,
     "description": "Wide range of cars for rent",
     "opening_hours": "24/7",
-    "services_offered": "Car rental, Driver service, Long term lease"
+    "services_offered": "Car rental, Driver service, Long term lease",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 6,
@@ -413,7 +475,9 @@
     "rating": 4.4,
     "description": "Easy car rentals",
     "opening_hours": "6 AM - 10 PM",
-    "services_offered": "Sedan rental, SUV hire, Self-drive"
+    "services_offered": "Sedan rental, SUV hire, Self-drive",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 6,
@@ -426,7 +490,9 @@
     "rating": 4.2,
     "description": "Rent your ride",
     "opening_hours": "24/7",
-    "services_offered": "Car hire, Tempo rental, Driver included"
+    "services_offered": "Car hire, Tempo rental, Driver included",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 6,
@@ -439,7 +505,9 @@
     "rating": 4,
     "description": "Quick car rentals",
     "opening_hours": "8 AM - 8 PM",
-    "services_offered": "Daily rental, Weekly deals, Airport transfer"
+    "services_offered": "Daily rental, Weekly deals, Airport transfer",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 6,
@@ -452,7 +520,9 @@
     "rating": 4.3,
     "description": "Reliable car rentals",
     "opening_hours": "7 AM - 9 PM",
-    "services_offered": "Luxury cars, Budget options, Corporate hire"
+    "services_offered": "Luxury cars, Budget options, Corporate hire",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 6,
@@ -465,7 +535,9 @@
     "rating": 4.5,
     "description": "Professional car hire",
     "opening_hours": "24/7",
-    "services_offered": "All types, Insurance included, 24/7 support"
+    "services_offered": "All types, Insurance included, 24/7 support",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 7,
@@ -478,7 +550,9 @@
     "rating": 4.2,
     "description": "Tractor rentals with operators",
     "opening_hours": "6 AM - 6 PM",
-    "services_offered": "Tractor rental, Plowing, Harvesting equipment"
+    "services_offered": "Tractor rental, Plowing, Harvesting equipment",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 7,
@@ -491,7 +565,9 @@
     "rating": 4,
     "description": "Agricultural tractors",
     "opening_hours": "5 AM - 7 PM",
-    "services_offered": "Tractor hire, Implements, Operator service"
+    "services_offered": "Tractor hire, Implements, Operator service",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 7,
@@ -504,7 +580,9 @@
     "rating": 4.3,
     "description": "Powerful tractor rentals",
     "opening_hours": "6 AM - 6 PM",
-    "services_offered": "Heavy duty tractors, Daily rental, Maintenance"
+    "services_offered": "Heavy duty tractors, Daily rental, Maintenance",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 7,
@@ -517,7 +595,9 @@
     "rating": 4.1,
     "description": "Farm equipment hire",
     "opening_hours": "7 AM - 5 PM",
-    "services_offered": "Tractors, Harvesters, Plows"
+    "services_offered": "Tractors, Harvesters, Plows",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 7,
@@ -530,7 +610,9 @@
     "rating": 4.4,
     "description": "Reliable tractor services",
     "opening_hours": "5 AM - 8 PM",
-    "services_offered": "All farm work, Fuel included, Skilled operators"
+    "services_offered": "All farm work, Fuel included, Skilled operators",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 7,
@@ -543,7 +625,9 @@
     "rating": 4.2,
     "description": "Professional agricultural rentals",
     "opening_hours": "6 AM - 6 PM",
-    "services_offered": "Tractor fleet, Seasonal hire, Support services"
+    "services_offered": "Tractor fleet, Seasonal hire, Support services",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 8,
@@ -556,7 +640,9 @@
     "rating": 4,
     "description": "Clean water supply services",
     "opening_hours": "5 AM - 9 PM",
-    "services_offered": "Water delivery, Tank cleaning, Borewell service"
+    "services_offered": "Water delivery, Tank cleaning, Borewell service",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 8,
@@ -569,7 +655,9 @@
     "rating": 4.2,
     "description": "Pure water delivery",
     "opening_hours": "6 AM - 8 PM",
-    "services_offered": "Drinking water, Construction water, Tankers"
+    "services_offered": "Drinking water, Construction water, Tankers",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 8,
@@ -582,7 +670,9 @@
     "rating": 4.1,
     "description": "Aqua supply services",
     "opening_hours": "7 AM - 7 PM",
-    "services_offered": "Bulk water, Tank rental, Cleaning"
+    "services_offered": "Bulk water, Tank rental, Cleaning",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 8,
@@ -595,7 +685,9 @@
     "rating": 4.3,
     "description": "Water supply masters",
     "opening_hours": "5 AM - 10 PM",
-    "services_offered": "Emergency supply, Regular delivery, Quality tested"
+    "services_offered": "Emergency supply, Regular delivery, Quality tested",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 8,
@@ -608,7 +700,9 @@
     "rating": 4,
     "description": "Reliable water services",
     "opening_hours": "6 AM - 9 PM",
-    "services_offered": "Potable water, Non-potable, Tank maintenance"
+    "services_offered": "Potable water, Non-potable, Tank maintenance",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 8,
@@ -621,7 +715,9 @@
     "rating": 4.4,
     "description": "Professional water supply",
     "opening_hours": "24/7",
-    "services_offered": "All needs, Fast delivery, Competitive rates"
+    "services_offered": "All needs, Fast delivery, Competitive rates",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 9,
@@ -634,7 +730,9 @@
     "rating": 4.5,
     "description": "Complete interior design solutions",
     "opening_hours": "10 AM - 7 PM",
-    "services_offered": "Interior design, Painting, Modular kitchen"
+    "services_offered": "Interior design, Painting, Modular kitchen",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 9,
@@ -647,7 +745,9 @@
     "rating": 4.3,
     "description": "Interior design masters",
     "opening_hours": "9 AM - 6 PM",
-    "services_offered": "Home decor, Kitchen design, Painting"
+    "services_offered": "Home decor, Kitchen design, Painting",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 9,
@@ -660,7 +760,9 @@
     "rating": 4.1,
     "description": "Stylish interiors",
     "opening_hours": "10 AM - 8 PM",
-    "services_offered": "Modular furniture, Wall art, Lighting"
+    "services_offered": "Modular furniture, Wall art, Lighting",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 9,
@@ -673,7 +775,9 @@
     "rating": 4.4,
     "description": "Creative home designs",
     "opening_hours": "9 AM - 7 PM",
-    "services_offered": "Full interior, Renovation, Consultation"
+    "services_offered": "Full interior, Renovation, Consultation",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 9,
@@ -686,7 +790,9 @@
     "rating": 4.2,
     "description": "Elegant interior solutions",
     "opening_hours": "11 AM - 6 PM",
-    "services_offered": "Luxury design, Budget options, Project management"
+    "services_offered": "Luxury design, Budget options, Project management",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 9,
@@ -699,7 +805,9 @@
     "rating": 4.5,
     "description": "Professional interior design",
     "opening_hours": "10 AM - 7 PM",
-    "services_offered": "End-to-end solutions, Quality materials, Expert team"
+    "services_offered": "End-to-end solutions, Quality materials, Expert team",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 10,
@@ -712,7 +820,9 @@
     "rating": 4,
     "description": "Bus ticket booking services",
     "opening_hours": "6 AM - 10 PM",
-    "services_offered": "Online booking, Counter service, Group tickets"
+    "services_offered": "Online booking, Counter service, Group tickets",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 10,
@@ -725,7 +835,9 @@
     "rating": 4.2,
     "description": "Quick ticket booking",
     "opening_hours": "7 AM - 9 PM",
-    "services_offered": "Bus tickets, Train reservations, Assistance"
+    "services_offered": "Bus tickets, Train reservations, Assistance",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 10,
@@ -738,7 +850,9 @@
     "rating": 4.1,
     "description": "Travel booking services",
     "opening_hours": "8 AM - 8 PM",
-    "services_offered": "All transport, Online portal, Customer support"
+    "services_offered": "All transport, Online portal, Customer support",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 10,
@@ -751,7 +865,9 @@
     "rating": 4.3,
     "description": "Easy travel bookings",
     "opening_hours": "6 AM - 10 PM",
-    "services_offered": "Bus, Train, Flight tickets, Packages"
+    "services_offered": "Bus, Train, Flight tickets, Packages",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 10,
@@ -764,7 +880,9 @@
     "rating": 4,
     "description": "Professional booking services",
     "opening_hours": "9 AM - 7 PM",
-    "services_offered": "Corporate bookings, Group travel, 24/7 support"
+    "services_offered": "Corporate bookings, Group travel, 24/7 support",
+    "isActive": false,
+    "isAvailable": false
   },
   {
     "service_id": 10,
@@ -777,6 +895,8 @@
     "rating": 4.4,
     "description": "Reliable ticket services",
     "opening_hours": "24/7",
-    "services_offered": "All modes, Instant booking, Cancellation support"
+    "services_offered": "All modes, Instant booking, Cancellation support",
+    "isActive": false,
+    "isAvailable": false
   }
 ]

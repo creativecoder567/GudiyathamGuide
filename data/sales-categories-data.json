@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Electronics",
+    "type": "electronics",
+    "description": "Electronic gadgets and appliances",
+    "isavailable": "true",
+    "image": "images/electronics.jpeg",
+    "isActive": false,
+    "isAvailable": true
+  },
+  {
+    "id": 2,
+    "name": "Furniture",
+    "type": "furniture",
+    "description": "Home and office furniture",
+    "isavailable": "false",
+    "image": "images/furniture.jpeg",
+    "isActive": false,
+    "isAvailable": false
+  },
+  {
+    "id": 3,
+    "name": "Clothing",
+    "type": "clothing",
+    "description": "Apparel and fashion items",
+    "isavailable": "false",
+    "image": "images/clothing.jpeg",
+    "isActive": false,
+    "isAvailable": false
+  },
+  {
+    "id": 4,
+    "name": "Groceries",
+    "type": "groceries",
+    "description": "Food and household items",
+    "isavailable": "false",
+    "image": "images/groceries.jpeg",
+    "isActive": false,
+    "isAvailable": false
+  },
+  {
+    "id": 5,
+    "name": "Automotive Parts",
+    "type": "auto_parts",
+    "description": "Car parts and accessories",
+    "isavailable": "false",
+    "image": "images/auto_parts.jpeg",
+    "isActive": false,
+    "isAvailable": false
+  }
+]

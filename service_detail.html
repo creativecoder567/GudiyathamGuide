@@ -19,109 +19,134 @@
         }
     </script>
     <script>
-        // Get query parameter
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log("DEBUG: DOMContentLoaded event fired.");
+            console.log("DEBUG: Current URL:", window.location.href);
 
-        const serviceId = parseInt(getQueryParam('service_id')) || 0;
-        // Update display
-        const display = document.getElementById('serviceIdDisplay');
-        if (display) display.textContent = serviceId;
-        // Render providers as responsive cards
-        function renderProviders(providers) {
-            const grid = document.getElementById('providersGrid');
-            if (!grid) return;
-            grid.innerHTML = '';
-            if (!providers.length) {
-                grid.innerHTML = '<div class="col-12 text-center"><p class="text-muted">No providers found for this category.</p></div>';
-                return;
+            // Get query parameter
+            function getQueryParam(param) {
+                console.log("DEBUG: Reading window.location.search:", window.location.search);
+                console.log("DEBUG: Full URL:", window.location.href);
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
             }
-            providers.forEach((p, idx) => {
-                const card = document.createElement('div');
-                card.className = 'provider-card col-lg-4 col-md-6 col-sm-12 mb-4';
-                card.style.position = 'relative';
 
-                if (p.isActive && p.isAvailable) {
-                    const ratingStars = p.rating ? '★'.repeat(Math.floor(p.rating)) + '☆'.repeat(5 - Math.floor(p.rating)) : '';
-                    const emailLink = p.email ? `<a href="mailto:${p.email}" class="text-primary"><i class="fa fa-envelope"></i> ${p.email}</a>` : '';
-                    const websiteLink = p.website ? `<a href="${p.website}" target="_blank" class="text-primary"><i class="fa fa-globe"></i> ${p.website}</a>` : '';
-                    const servicesList = p.services_offered ? p.services_offered.split(', ').map(s => `<span class="badge badge-secondary mr-1">${s.trim()}</span>`).join('') : '';
-                    card.innerHTML = `
-                        <div class="card h-100 shadow-sm" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
-                            <img src="${p.image || 'images/auto.svg'}" class="card-img-top" alt="${p.name}" style="height: 200px; object-fit: contain; width: 100%; padding: 10px 0;" onerror="console.error('Image failed:', '${p.image || 'images/auto.svg'}')">
-                            <div class="card-body d-flex flex-column" style="padding: 15px;">
-                                <h5 class="card-title text-primary" style="color: #007bff; margin-bottom: 10px;">${p.name}</h5>
-                                <p class="card-text text-muted" style="margin-bottom: 5px;"><i class="fa fa-map-marker"></i> ${p.location}</p>
-                                <p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-phone text-success"></i> <a href="tel:${p.contact}" class="text-success" style="color: #28a745; text-decoration: none;">${p.contact}</a></p>
-                                ${emailLink ? `<p class="card-text" style="margin-bottom: 5px;">${emailLink}</p>` : ''}
-                                ${websiteLink ? `<p class="card-text" style="margin-bottom: 5px;">${websiteLink}</p>` : ''}
-                                ${p.rating ? `<p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-star text-warning"></i> ${ratingStars} (${p.rating})</p>` : ''}
-                                ${p.opening_hours ? `<p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-clock-o"></i> ${p.opening_hours}</p>` : ''}
-                                ${p.description ? `<p class="card-text" style="margin-bottom: 5px;">${p.description}</p>` : ''}
-                                ${servicesList ? `<div class="mt-2" style="margin-top: 10px;">${servicesList}</div>` : ''}
-                            </div>
-                        </div>`;
-                } else {
-                    card.style.cursor = 'not-allowed';
-                    card.innerHTML = `
-                        <div class="card h-100 shadow-sm" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; filter: grayscale(100%);">
-                            <img src="${p.image || 'images/auto.svg'}" class="card-img-top" alt="${p.name}" style="height: 200px; object-fit: contain; width: 100%; padding: 10px 0;" onerror="console.error('Image failed:', '${p.image || 'images/auto.svg'}')">
-                            <div class="card-body d-flex flex-column" style="padding: 15px;">
-                                <h5 class="card-title text-primary" style="color: #007bff; margin-bottom: 10px;">${p.name}</h5>
-                                <p class="card-text text-muted" style="margin-bottom: 5px;"><i class="fa fa-map-marker"></i> ${p.location}</p>
-                                <p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-phone text-success"></i> <a href="tel:${p.contact}" class="text-success" style="color: #28a745; text-decoration: none;">${p.contact}</a></p>
-                            </div>
-                            <div class="coming-soon-label">Coming Soon</div>
-                        </div>`;
+            const serviceIdStr = getQueryParam('service_id');
+            console.log("DEBUG: Raw service_id from URL:", serviceIdStr);
+            const serviceId = parseInt(serviceIdStr) || 0;
+            console.log("DEBUG: Parsed serviceId:", serviceId, "| Type:", typeof serviceId);
+
+            // Update display
+            const display = document.getElementById('serviceIdDisplay');
+            if (display) display.textContent = serviceId;
+
+            // Render providers as responsive cards
+            function renderProviders(providers) {
+                const grid = document.getElementById('providersGrid');
+                if (!grid) {
+                    console.error("DEBUG: providersGrid element not found!");
+                    return;
                 }
-                grid.appendChild(card);
-            });
-        }
+                grid.innerHTML = '';
+                if (!providers.length) {
+                    grid.innerHTML = '<div class="col-12 text-center"><p class="text-muted">No providers found for this category.</p></div>';
+                    return;
+                }
+                providers.forEach((p, idx) => {
+                    const card = document.createElement('div');
+                    card.className = 'provider-card col-lg-4 col-md-6 col-sm-12 mb-4';
+                    card.style.position = 'relative';
 
-        // Load data and initialize search/filter
-        (function(){
-            const searchInput = document.querySelector('#search input[type="search"]');
-            Promise.all([
-                fetch('data/categories-data.json').then(r => r.json()),
-                fetch('data/services-data.json').then(r => r.json())
-            ])
-                .then(([categories, data]) => {
-                    // find category
-                    const category = categories.find(c => c.id === serviceId);
-                    const categoryName = category ? category.name : 'Services';
-                    // filter by service_id
-                    const filtered = data.filter(d => d.service_id === serviceId);
-                    // update heading/title
-                    try {
-                        const pretty = categoryName + ' Services';
-                        const h = document.querySelector('.page-title');
-                        if (h) h.textContent = pretty + ' — Gudiyatham Guide';
-                        document.title = pretty + ' — Gudiyatham Guide';
-                        // update breadcrumb
-                        const breadcrumb = document.querySelector('.breadcrumb li:last-child');
-                        if (breadcrumb) breadcrumb.textContent = categoryName;
-                    } catch(e){ console.error(e); }
-                    renderProviders(filtered);
-
-                    // wire search to filter visible cards
-                    if (searchInput) {
-                        searchInput.addEventListener('input', function(e){
-                            const q = e.target.value.trim().toLowerCase();
-                            const shown = filtered.filter(p => {
-                                return p.name.toLowerCase().includes(q) || (p.location||'').toLowerCase().includes(q) || (p.contact||'').toLowerCase().includes(q) || (p.email||'').toLowerCase().includes(q) || (p.description||'').toLowerCase().includes(q) || (p.opening_hours||'').toLowerCase().includes(q) || (p.services_offered||'').toLowerCase().includes(q);
-                            });
-                            renderProviders(shown);
-                        });
+                    if (p.isActive && p.isAvailable) {
+                        const ratingStars = p.rating ? '★'.repeat(Math.floor(p.rating)) + '☆'.repeat(5 - Math.floor(p.rating)) : '';
+                        const emailLink = p.email ? `<a href="mailto:${p.email}" class="text-primary"><i class="fa fa-envelope"></i> ${p.email}</a>` : '';
+                        const websiteLink = p.website ? `<a href="${p.website}" target="_blank" class="text-primary"><i class="fa fa-globe"></i> ${p.website}</a>` : '';
+                        const servicesList = p.services_offered ? p.services_offered.split(', ').map(s => `<span class="badge badge-secondary mr-1">${s.trim()}</span>`).join('') : '';
+                        card.innerHTML = `
+                            <div class="card h-100 shadow-sm" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                                <img src="${p.image || 'images/auto.svg'}" class="card-img-top" alt="${p.name}" style="height: 200px; object-fit: contain; width: 100%; padding: 10px 0;" onerror="console.error('Image failed:', '${p.image || 'images/auto.svg'}')">
+                                <div class="card-body d-flex flex-column" style="padding: 15px;">
+                                    <h5 class="card-title text-primary" style="color: #007bff; margin-bottom: 10px;">${p.name}</h5>
+                                    <p class="card-text text-muted" style="margin-bottom: 5px;"><i class="fa fa-map-marker"></i> ${p.location}</p>
+                                    <p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-phone text-success"></i> <a href="tel:${p.contact}" class="text-success" style="color: #28a745; text-decoration: none;">${p.contact}</a></p>
+                                    ${emailLink ? `<p class="card-text" style="margin-bottom: 5px;">${emailLink}</p>` : ''}
+                                    ${websiteLink ? `<p class="card-text" style="margin-bottom: 5px;">${websiteLink}</p>` : ''}
+                                    ${p.rating ? `<p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-star text-warning"></i> ${ratingStars} (${p.rating})</p>` : ''}
+                                    ${p.opening_hours ? `<p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-clock-o"></i> ${p.opening_hours}</p>` : ''}
+                                    ${p.description ? `<p class="card-text" style="margin-bottom: 5px;">${p.description}</p>` : ''}
+                                    ${servicesList ? `<div class="mt-2" style="margin-top: 10px;">${servicesList}</div>` : ''}
+                                </div>
+                            </div>`;
+                    } else {
+                        card.style.cursor = 'not-allowed';
+                        card.innerHTML = `
+                            <div class="card h-100 shadow-sm" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; filter: grayscale(100%);">
+                                <img src="${p.image || 'images/auto.svg'}" class="card-img-top" alt="${p.name}" style="height: 200px; object-fit: contain; width: 100%; padding: 10px 0;" onerror="console.error('Image failed:', '${p.image || 'images/auto.svg'}')">
+                                <div class="card-body d-flex flex-column" style="padding: 15px;">
+                                    <h5 class="card-title text-primary" style="color: #007bff; margin-bottom: 10px;">${p.name}</h5>
+                                    <p class="card-text text-muted" style="margin-bottom: 5px;"><i class="fa fa-map-marker"></i> ${p.location}</p>
+                                    <p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-phone text-success"></i> <a href="tel:${p.contact}" class="text-success" style="color: #28a745; text-decoration: none;">${p.contact}</a></p>
+                                </div>
+                                <div class="coming-soon-label">Coming Soon</div>
+                            </div>`;
                     }
-                })
-                .catch(err => {
-                    console.error('Error loading data', err);
-                    const grid = document.querySelector('.provider-grid');
-                    if (grid) grid.innerHTML = '<p>Unable to load service data.</p>';
+                    grid.appendChild(card);
                 });
-        })();
+            }
+
+            // Load data and initialize search/filter
+            (function(){
+                const searchInput = document.querySelector('#search input[type="search"]');
+                Promise.all([
+                    fetch('data/categories-data.json').then(r => r.json()),
+                    fetch('data/services-data.json').then(r => r.json())
+                ])
+                    .then(([categories, data]) => {
+                        console.log("DEBUG: Data fetched successfully.");
+                        console.log("DEBUG: First provider item from data:", data.length > 0 ? data[0] : "Data array is empty");
+                        
+                        // find category
+                        const category = categories.find(c => c.id === serviceId);
+                        console.log("DEBUG: Found category:", category);
+                        const categoryName = category ? category.name : 'Services';
+
+                        // filter by service_id
+                        const filtered = data.filter(d => d.service_id === serviceId);
+                        console.log("DEBUG: Number of providers found after filtering:", filtered.length);
+                        if (filtered.length > 0) {
+                            console.log("DEBUG: First filtered provider:", filtered[0]);
+                        }
+
+                        // update heading/title
+                        try {
+                            const pretty = categoryName + ' Services';
+                            const h = document.querySelector('.page-title');
+                            if (h) h.textContent = pretty + ' — Gudiyatham Guide';
+                            document.title = pretty + ' — Gudiyatham Guide';
+                            // update breadcrumb
+                            const breadcrumb = document.querySelector('.breadcrumb li:last-child');
+                            if (breadcrumb) breadcrumb.textContent = categoryName;
+                        } catch(e){ console.error(e); }
+                        renderProviders(filtered);
+
+                        // wire search to filter visible cards
+                        if (searchInput) {
+                            searchInput.addEventListener('input', function(e){
+                                const q = e.target.value.trim().toLowerCase();
+                                const shown = filtered.filter(p => {
+                                    return p.name.toLowerCase().includes(q) || (p.location||'').toLowerCase().includes(q) || (p.contact||'').toLowerCase().includes(q) || (p.email||'').toLowerCase().includes(q) || (p.description||'').toLowerCase().includes(q) || (p.opening_hours||'').toLowerCase().includes(q) || (p.services_offered||'').toLowerCase().includes(q);
+                                });
+                                renderProviders(shown);
+                            });
+                        }
+                    })
+                    .catch(err => {
+                        console.error('CRITICAL ERROR: Error loading or processing data.', err);
+                        const grid = document.getElementById('providersGrid');
+                        if (grid) grid.innerHTML = '<div class="col-12 text-center"><p style="color: red; font-weight: bold;">CRITICAL ERROR: Could not load service data. Check browser console (F12) for details.</p></div>';
+                    });
+            })();
+        });
     </script>
     <style>
         .coming-soon-label {
