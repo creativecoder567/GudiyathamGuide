@@ -14,89 +14,80 @@
     "name": "Plumber Services",
     "type": "plumber",
     "description": "Plumbing repairs and installations",
-    "isavailable": "false",
-    "image": "images/plumber.svg",
-    "isActive": false,
-    "isAvailable": false
+    "isavailable": false,
+    "image": "images/plumber.svg"
   },
   {
     "id": 3,
     "name": "Electrician Services",
     "type": "electrician",
     "description": "Electrical repairs and installations",
-    "isavailable": "false",
-    "image": "images/electrician.svg",
-    "isActive": false,
-    "isAvailable": false
+    "isAvailable": false,
+    "image": "images/electrician.svg"
   },
   {
     "id": 4,
     "name": "Carpenter Services",
     "type": "carpenter",
     "description": "Woodworking and carpentry",
-    "isavailable": "false",
-    "image": "images/carpenter.svg",
-    "isActive": false,
-    "isAvailable": false
+    "isAvailable": false,
+    "image": "images/carpenter.svg"
   },
   {
     "id": 5,
     "name": "AC/Appliance Repair",
     "type": "ac_repair",
     "description": "Repair of air conditioners and appliances",
-    "isavailable": "false",
-    "image": "images/ac_repair.svg",
-    "isActive": false,
-    "isAvailable": false
+    "isAvailable": false,
+    "image": "images/ac_repair.svg"
   },
   {
     "id": 6,
     "name": "Car Rental",
     "type": "car_rental",
     "description": "Vehicle rental services",
-    "isavailable": "false",
-    "image": "images/car_rental.svg",
-    "isActive": false,
-    "isAvailable": false
+    "isAvailable": false,
+    "image": "images/car_rental.svg"
   },
   {
     "id": 7,
     "name": "Tractor Rentals",
     "type": "tractor_rentals",
     "description": "Tractor and equipment rental",
-    "isavailable": "false",
-    "image": "images/tractor_rentals.svg",
-    "isActive": false,
-    "isAvailable": false
+    "isAvailable": false,
+    "image": "images/tractor_rentals.svg"
   },
   {
     "id": 8,
     "name": "Water Tank Supply",
     "type": "water_tank",
     "description": "Water supply and tank services",
-    "isavailable": "false",
-    "image": "images/water_tank.svg",
-    "isActive": false,
-    "isAvailable": false
+    "isAvailable": false,
+    "image": "images/water_tank.svg"
   },
   {
     "id": 9,
     "name": "Home Interior Design",
     "type": "home_interior",
     "description": "Interior design services",
-    "isavailable": "false",
-    "image": "images/home_interior.svg",
-    "isActive": false,
-    "isAvailable": false
+    "isAvailable": false,
+    "image": "images/home_interior.svg"
   },
   {
     "id": 10,
     "name": "Online Ticket Booking",
     "type": "ticket_booking",
     "description": "Bus ticket booking services",
-    "isavailable": "false",
-    "image": "images/ticket_booking.svg",
-    "isActive": false,
-    "isAvailable": false
+    "isAvailable": false,
+    "image": "images/ticket_booking.svg"
+  },
+  {
+    "id": 11,
+    "name": "PhotoShoot",
+    "type": "photo",
+    "description": "Wedding photos,Reception shoot,short film,drone shots",
+    "isAvailable": true,
+    "isActive": true,
+    "image": "images/camera.svg"
   }
 ]

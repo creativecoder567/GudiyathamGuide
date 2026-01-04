@@ -45,8 +45,7 @@ const servicesData = serviceDetailsData.map(row => ({
     description: row.description || '',
     opening_hours: row.opening_hours || '',
     services_offered: row.services_offered || '',
-    isActive: String(findValueByKey(row, 'isActive')).toLowerCase() === 'true',
-    isAvailable: String(findValueByKey(row, 'isAvailable')).toLowerCase() === 'true'
+    isActive: String(findValueByKey(row, 'isactive')).toLowerCase() === 'true'
 }));
 
 // Write to services-data.json
@@ -54,10 +53,12 @@ fs.writeFileSync('data/services-data.json', JSON.stringify(servicesData, null, 2
 
 // Transform service categories to include image field
 const serviceCategoriesWithImages = serviceCategoriesData.map(cat => ({
-    ...cat,
-    image: `images/${cat.type}.svg`,
-    isActive: String(findValueByKey(cat, 'isActive')).toLowerCase() === 'true',
-    isAvailable: String(findValueByKey(cat, 'isAvailable')).toLowerCase() === 'true'
+    id: cat.id,
+    name: cat.name,
+    type: cat.type,
+    description: cat.description,
+    isAvailable: String(findValueByKey(cat, 'is available')).toLowerCase() === 'true',
+    image: `images/${cat.type}.svg`
 }));
 
 // Write service categories to categories-data.json
