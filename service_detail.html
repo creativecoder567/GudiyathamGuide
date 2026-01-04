@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gudiyatham Guide | Auto & Transport Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords"
+          content="Best Website Designing and software Development Company in Gudiyatham.Gudiyatham BusTimings Available"/>
+    <meta name="description"
+          content="Best web Designing and Software company in Gudiyatham where we will provide all kinds of services like App Development,Web Designing,Home Interior and Exterior Design. and displaying BusTimings from Gudiyatham"/>
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log("DEBUG: DOMContentLoaded event fired.");
+            console.log("DEBUG: Current URL:", window.location.href);
+
+            // Get query parameter
+            function getQueryParam(param) {
+                console.log("DEBUG: Reading window.location.search:", window.location.search);
+                console.log("DEBUG: Full URL:", window.location.href);
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            const serviceIdStr = getQueryParam('service_id');
+            console.log("DEBUG: Raw service_id from URL:", serviceIdStr);
+            const serviceId = parseInt(serviceIdStr) || 0;
+            console.log("DEBUG: Parsed serviceId:", serviceId, "| Type:", typeof serviceId);
+
+            // Update display
+            const display = document.getElementById('serviceIdDisplay');
+            if (display) display.textContent = serviceId;
+
+            // Render providers as responsive cards
+            function renderProviders(providers) {
+                const grid = document.getElementById('providersGrid');
+                if (!grid) {
+                    console.error("DEBUG: providersGrid element not found!");
+                    return;
+                }
+                grid.innerHTML = '';
+                if (!providers.length) {
+                    grid.innerHTML = '<div class="col-12 text-center"><p class="text-muted">No providers found for this category.</p></div>';
+                    return;
+                }
+                providers.forEach((p, idx) => {
+                    const card = document.createElement('div');
+                    card.className = 'provider-card col-lg-4 col-md-6 col-sm-12 mb-4';
+                    card.style.position = 'relative';
+
+                    if (p.isActive && p.isAvailable) {
+                        const ratingStars = p.rating ? '★'.repeat(Math.floor(p.rating)) + '☆'.repeat(5 - Math.floor(p.rating)) : '';
+                        const emailLink = p.email ? `<a href="mailto:${p.email}" class="text-primary"><i class="fa fa-envelope"></i> ${p.email}</a>` : '';
+                        const websiteLink = p.website ? `<a href="${p.website}" target="_blank" class="text-primary"><i class="fa fa-globe"></i> ${p.website}</a>` : '';
+                        const servicesList = p.services_offered ? p.services_offered.split(', ').map(s => `<span class="badge badge-secondary mr-1">${s.trim()}</span>`).join('') : '';
+                        card.innerHTML = `
+                            <div class="card h-100 shadow-sm" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                                <img src="${p.image || 'images/auto.svg'}" class="card-img-top" alt="${p.name}" style="height: 200px; object-fit: contain; width: 100%; padding: 10px 0;" onerror="console.error('Image failed:', '${p.image || 'images/auto.svg'}')">
+                                <div class="card-body d-flex flex-column" style="padding: 15px;">
+                                    <h5 class="card-title text-primary" style="color: #007bff; margin-bottom: 10px;">${p.name}</h5>
+                                    <p class="card-text text-muted" style="margin-bottom: 5px;"><i class="fa fa-map-marker"></i> ${p.location}</p>
+                                    <p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-phone text-success"></i> <a href="tel:${p.contact}" class="text-success" style="color: #28a745; text-decoration: none;">${p.contact}</a></p>
+                                    ${emailLink ? `<p class="card-text" style="margin-bottom: 5px;">${emailLink}</p>` : ''}
+                                    ${websiteLink ? `<p class="card-text" style="margin-bottom: 5px;">${websiteLink}</p>` : ''}
+                                    ${p.rating ? `<p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-star text-warning"></i> ${ratingStars} (${p.rating})</p>` : ''}
+                                    ${p.opening_hours ? `<p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-clock-o"></i> ${p.opening_hours}</p>` : ''}
+                                    ${p.description ? `<p class="card-text" style="margin-bottom: 5px;">${p.description}</p>` : ''}
+                                    ${servicesList ? `<div class="mt-2" style="margin-top: 10px;">${servicesList}</div>` : ''}
+                                </div>
+                            </div>`;
+                    } else {
+                        card.style.cursor = 'not-allowed';
+                        card.innerHTML = `
+                            <div class="card h-100 shadow-sm" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; filter: grayscale(100%);">
+                                <img src="${p.image || 'images/auto.svg'}" class="card-img-top" alt="${p.name}" style="height: 200px; object-fit: contain; width: 100%; padding: 10px 0;" onerror="console.error('Image failed:', '${p.image || 'images/auto.svg'}')">
+                                <div class="card-body d-flex flex-column" style="padding: 15px;">
+                                    <h5 class="card-title text-primary" style="color: #007bff; margin-bottom: 10px;">${p.name}</h5>
+                                    <p class="card-text text-muted" style="margin-bottom: 5px;"><i class="fa fa-map-marker"></i> ${p.location}</p>
+                                    <p class="card-text" style="margin-bottom: 5px;"><i class="fa fa-phone text-success"></i> <a href="tel:${p.contact}" class="text-success" style="color: #28a745; text-decoration: none;">${p.contact}</a></p>
+                                </div>
+                                <div class="coming-soon-label">Coming Soon</div>
+                            </div>`;
+                    }
+                    grid.appendChild(card);
+                });
+            }
+
+            // Load data and initialize search/filter
+            (function(){
+                const searchInput = document.querySelector('#search input[type="search"]');
+                Promise.all([
+                    fetch('data/categories-data.json').then(r => r.json()),
+                    fetch('data/services-data.json').then(r => r.json())
+                ])
+                    .then(([categories, data]) => {
+                        console.log("DEBUG: Data fetched successfully.");
+                        console.log("DEBUG: First provider item from data:", data.length > 0 ? data[0] : "Data array is empty");
+                        
+                        // find category
+                        const category = categories.find(c => c.id === serviceId);
+                        console.log("DEBUG: Found category:", category);
+                        const categoryName = category ? category.name : 'Services';
+
+                        // filter by service_id
+                        const filtered = data.filter(d => d.service_id === serviceId);
+                        console.log("DEBUG: Number of providers found after filtering:", filtered.length);
+                        if (filtered.length > 0) {
+                            console.log("DEBUG: First filtered provider:", filtered[0]);
+                        }
+
+                        // update heading/title
+                        try {
+                            const pretty = categoryName + ' Services';
+                            const h = document.querySelector('.page-title');
+                            if (h) h.textContent = pretty + ' — Gudiyatham Guide';
+                            document.title = pretty + ' — Gudiyatham Guide';
+                            // update breadcrumb
+                            const breadcrumb = document.querySelector('.breadcrumb li:last-child');
+                            if (breadcrumb) breadcrumb.textContent = categoryName;
+                        } catch(e){ console.error(e); }
+                        renderProviders(filtered);
+
+                        // wire search to filter visible cards
+                        if (searchInput) {
+                            searchInput.addEventListener('input', function(e){
+                                const q = e.target.value.trim().toLowerCase();
+                                const shown = filtered.filter(p => {
+                                    return p.name.toLowerCase().includes(q) || (p.location||'').toLowerCase().includes(q) || (p.contact||'').toLowerCase().includes(q) || (p.email||'').toLowerCase().includes(q) || (p.description||'').toLowerCase().includes(q) || (p.opening_hours||'').toLowerCase().includes(q) || (p.services_offered||'').toLowerCase().includes(q);
+                                });
+                                renderProviders(shown);
+                            });
+                        }
+                    })
+                    .catch(err => {
+                        console.error('CRITICAL ERROR: Error loading or processing data.', err);
+                        const grid = document.getElementById('providersGrid');
+                        if (grid) grid.innerHTML = '<div class="col-12 text-center"><p style="color: red; font-weight: bold;">CRITICAL ERROR: Could not load service data. Check browser console (F12) for details.</p></div>';
+                    });
+            })();
+        });
+    </script>
+    <style>
+        .coming-soon-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+
+
+    <!-- css files -->
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/><!-- bootstrap css -->
+    <link href="css/style.css" rel='stylesheet' type='text/css'/><!-- custom css -->
+    <link href="css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+    <!-- //css files -->
+
+    <!-- google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900"
+          rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i"
+          rel="stylesheet">
+    <!-- //google fonts -->
+
+</head>
+<body>
+
+<!-- header -->
+<header>
+    <div class="container">
+        <!-- nav -->
+        <nav class="py-md-4 py-3 d-lg-flex">
+            <div id="logo">
+                <h1><a href="index.html"> Gudiyatham</a></h1>
+            </div>
+            <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+            <input type="checkbox" id="drop"/>
+            <ul class="menu mt-lg-3 ml-auto">
+                <li class=""><a href="index.html">Home</a></li>
+                <li class=""><a href="about.html">About Us</a></li>
+                <li class="active"><a href="services.html">Services</a></li>
+                <li class="services_dropdown"><a href="sales.html">Sales</a></li>
+                <li class=""><a href="bustimings.html">Bus Timings</a></li>
+                <li class=""><a href="bus_individual_time.html">Individual Bus Timings</a></li>
+                <li class=""><a href="gallery.html">Gallery</a></li>
+                <li class="mr-2"><a href="contact.html">Contact</a></li>
+                <li class=""><span><span class="fa fa-phone"></span> +91 8489867648</span></li>
+            </ul>
+        </nav>
+        <!-- //nav -->
+    </div>
+</header>
+<!-- //header -->
+
+<!-- banner -->
+<div class="inner-banner" id="home">
+    <div class="inner-banner-overlay">
+        <div class="container">
+        </div>
+    </div>
+</div>
+<!-- //banner -->
+
+<!-- page details -->
+<div class="breadcrumb-agile">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <a href="services.html">Our Services</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Auto Contact</li>
+
+        </ol>
+    </div>
+</div>
+<!-- //page details -->
+<!-- services -->
+ 
+    <h1 class="page-title text-center">Auto & Transport Services — Gudiyatham Guide</h1>
+
+    <!-- services -->
+<div class="services" id="search">
+    <div class="container pt-lg-5 pt-3">
+        <div class="input-group rounded">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+                <i class="fas fa-search"></i></span>
+        </div>
+
+    </div>
+</div>
+
+<!-- services -->
+<section class="services py-5" id="services">
+    <div class="container">
+        <div id="providersGrid" class="row">
+            <div class="col-12" style="padding: 20px; background: #f8f9fa; border: 1px solid #ddd; margin: 10px 0; border-radius: 8px; text-align: center;">
+                <h3>Loading Service Providers...</h3>
+                <p>If you can see this message, the page is loading but JavaScript may not be working.</p>
+                <p>Try refreshing the page or check the browser console for errors.</p>
+                <p>Service ID: <span id="serviceIdDisplay">Not loaded</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- //services -->
+
+
+<!-- stats -->
+<section class="stats py-5" id="stats">
+    <div class="container py-lg-5 py-md-3">
+        <div class="row stat-grids">
+            <div class="col-lg-6 stats-left">
+                <h3 class="heading mb-4 text-li">Years in the field</h3>
+                <p class="mb-3">Integer pulvinar leo id viverra feugiat. Pellentesque libero justo, semper at tempus
+                    vel, ultrices in ligula. Nulla sollicit sed.</p>
+                <h4><span>20+</span> Years of Experience</h4>
+            </div>
+            <div class="col-lg-6 grid1 stats-right mt-lg-0 mt-5 pl-lg-5">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="text-li">Happy Customers</p>
+                        <h4 class="text-wh">1900+</h4>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="text-li">Completed Work</p>
+                        <h4 class="text-wh">2300+</h4>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-sm-6">
+                        <p class="text-li">Winning Awards</p>
+                        <h4 class="text-wh">20+</h4>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="text-li">Company Members</p>
+                        <h4 class="text-wh">80+</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //stats -->
+
+<!-- footer -->
+<footer class="py-5">
+    <div class="container py-md-5">
+        <div class="footer-logo mb-5 text-center">
+            <a class="navbar-brand" href="index.html"> Gudiyatham</a>
+        </div>
+        <div class="footer-grid">
+            <div class="social mb-4 text-center">
+                <ul class="d-flex justify-content-center">
+                    <li class="mx-2"><a href="#"><span class="fa fa-facebook-f"></span></a></li>
+                    <li class="mx-2"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                    <li class="mx-2"><a href="#"><span class="fa fa-dribbble"></span></a></li>
+                    <li class="mx-2"><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="move-top text-center mt-3">
+            <a href="#home" class="move-top">
+                <span class="fa fa-angle-double-up" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+</footer>
+<!-- //footer -->
+
+</body>
+</html>

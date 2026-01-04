@@ -1,0 +1,22 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9a9e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fecfef;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#grad6)"/>
+  <rect x="120" y="130" width="160" height="60" rx="8" fill="white" opacity="0.9"/>
+  <circle cx="150" cy="160" r="12" fill="#333"/>
+  <circle cx="250" cy="160" r="12" fill="#333"/>
+  <rect x="140" y="145" width="20" height="30" rx="2" fill="#333"/>
+  <rect x="240" y="145" width="20" height="30" rx="2" fill="#333"/>
+  <rect x="160" y="140" width="80" height="35" rx="5" fill="#e74c3c"/>
+  <rect x="170" y="150" width="60" height="15" rx="2" fill="#333"/>
+  <circle cx="185" cy="157" r="2" fill="#f39c12"/>
+  <circle cx="195" cy="157" r="2" fill="#f39c12"/>
+  <circle cx="205" cy="157" r="2" fill="#f39c12"/>
+  <circle cx="215" cy="157" r="2" fill="#f39c12"/>
+  <text x="200" y="220" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">CAR RENTAL</text>
+  <text x="200" y="240" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">Vehicle Rental Services</text>
+</svg>

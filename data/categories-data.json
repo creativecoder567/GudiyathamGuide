@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "name": "Auto Services",
+    "type": "auto",
+    "description": "Auto Cab Service",
+    "isavailable": "true",
+    "image": "images/auto.svg",
+    "isActive": true,
+    "isAvailable": true
+  },
+  {
+    "id": 2,
+    "name": "Plumber Services",
+    "type": "plumber",
+    "description": "Plumbing repairs and installations",
+    "isavailable": false,
+    "image": "images/plumber.svg"
+  },
+  {
+    "id": 3,
+    "name": "Electrician Services",
+    "type": "electrician",
+    "description": "Electrical repairs and installations",
+    "isAvailable": false,
+    "image": "images/electrician.svg"
+  },
+  {
+    "id": 4,
+    "name": "Carpenter Services",
+    "type": "carpenter",
+    "description": "Woodworking and carpentry",
+    "isAvailable": false,
+    "image": "images/carpenter.svg"
+  },
+  {
+    "id": 5,
+    "name": "AC/Appliance Repair",
+    "type": "ac_repair",
+    "description": "Repair of air conditioners and appliances",
+    "isAvailable": false,
+    "image": "images/ac_repair.svg"
+  },
+  {
+    "id": 6,
+    "name": "Car Rental",
+    "type": "car_rental",
+    "description": "Vehicle rental services",
+    "isAvailable": false,
+    "image": "images/car_rental.svg"
+  },
+  {
+    "id": 7,
+    "name": "Tractor Rentals",
+    "type": "tractor_rentals",
+    "description": "Tractor and equipment rental",
+    "isAvailable": false,
+    "image": "images/tractor_rentals.svg"
+  },
+  {
+    "id": 8,
+    "name": "Water Tank Supply",
+    "type": "water_tank",
+    "description": "Water supply and tank services",
+    "isAvailable": false,
+    "image": "images/water_tank.svg"
+  },
+  {
+    "id": 9,
+    "name": "Home Interior Design",
+    "type": "home_interior",
+    "description": "Interior design services",
+    "isAvailable": false,
+    "image": "images/home_interior.svg"
+  },
+  {
+    "id": 10,
+    "name": "Online Ticket Booking",
+    "type": "ticket_booking",
+    "description": "Bus ticket booking services",
+    "isAvailable": false,
+    "image": "images/ticket_booking.svg"
+  },
+  {
+    "id": 11,
+    "name": "PhotoShoot",
+    "type": "photo",
+    "description": "Wedding photos,Reception shoot,short film,drone shots",
+    "isAvailable": true,
+    "isActive": true,
+    "image": "images/camera.svg"
+  }
+]

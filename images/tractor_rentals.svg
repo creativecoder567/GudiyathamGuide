@@ -1,0 +1,22 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8edea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fed6e3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#grad7)"/>
+  <rect x="100" y="140" width="200" height="50" rx="5" fill="#8B4513" opacity="0.9"/>
+  <rect x="110" y="150" width="180" height="30" rx="3" fill="#D2691E"/>
+  <circle cx="130" cy="165" r="8" fill="#333"/>
+  <circle cx="170" cy="165" r="8" fill="#333"/>
+  <circle cx="210" cy="165" r="8" fill="#333"/>
+  <circle cx="250" cy="165" r="8" fill="#333"/>
+  <rect x="120" y="155" width="20" height="20" rx="2" fill="#333"/>
+  <rect x="160" y="155" width="20" height="20" rx="2" fill="#333"/>
+  <rect x="200" y="155" width="20" height="20" rx="2" fill="#333"/>
+  <rect x="240" y="155" width="20" height="20" rx="2" fill="#333"/>
+  <rect x="140" y="120" width="120" height="25" rx="3" fill="#228B22"/>
+  <text x="200" y="220" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="18" font-weight="bold">TRACTOR RENTALS</text>
+  <text x="200" y="240" text-anchor="middle" fill="#2c3e50" font-family="Arial, sans-serif" font-size="12">Equipment Rental</text>
+</svg>
