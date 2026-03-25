@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "serve"
+  },
   "dependencies": {
     "puppeteer": "^24.33.0",
     "serve": "^14.2.5",
